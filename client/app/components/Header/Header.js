@@ -1,51 +1,39 @@
 import React from 'react';
+import { Navbar, Nav, NavItem } from 'react-bootstrap';
 
-// import { Link } from 'react-router-dom';
-import {Navbar, Nav, NavDropdown, NavItem, MenuItem} from 'react-bootstrap';
+class Header extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { activeKey: 1 };
+    this.handleSelect = this.handleSelect.bind(this);
+  }
 
-const Header = () => (
-  <header>
-    {/* <Link to="/">Home</Link>
+  handleSelect(selectedKey) {
+    this.setState({ activeKey: selectedKey });
+  }
 
-    <nav>
-      <Link to="/helloworld">Hello World</Link>
-    </nav>
+  render() {
+    return (
+      <header>
+        <Navbar inverse collapseOnSelect staticTop>
+          <Navbar.Header>
+            <Navbar.Brand>
+              <a href="/">HopHacks2018 App</a>
+            </Navbar.Brand>
+            <Navbar.Toggle />
+          </Navbar.Header>
 
-    <hr /> */}
-    <Navbar inverse collapseOnSelect>
-      <Navbar.Header>
-        <Navbar.Brand>
-          <a href="#brand">React-Bootstrap</a>
-        </Navbar.Brand>
-        <Navbar.Toggle />
-      </Navbar.Header>
-      <Navbar.Collapse>
-        <Nav>
-          <NavItem eventKey={1} href="#">
-            Link
-      </NavItem>
-          <NavItem eventKey={2} href="#">
-            Link
-      </NavItem>
-          <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
-            <MenuItem eventKey={3.1}>Action</MenuItem>
-            <MenuItem eventKey={3.2}>Another action</MenuItem>
-            <MenuItem eventKey={3.3}>Something else here</MenuItem>
-            <MenuItem divider />
-            <MenuItem eventKey={3.3}>Separated link</MenuItem>
-          </NavDropdown>
-        </Nav>
-        <Nav pullRight>
-          <NavItem eventKey={1} href="#">
-            Link Right
-      </NavItem>
-          <NavItem eventKey={2} href="#">
-            Link Right
-      </NavItem>
-        </Nav>
-      </Navbar.Collapse>
-    </Navbar>
-  </header>
-);
+          <Navbar.Collapse>
+            <Nav>
+              <NavItem>
+                Link
+            </NavItem>
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
+      </header>
+    );
+  }
+}
 
 export default Header;
