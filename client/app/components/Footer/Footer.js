@@ -20,10 +20,10 @@ class Footer extends React.Component {
     return (
       <Navbar inverse fixedBottom>
         <Nav bsStyle="pills" activeKey={this.state.activeKey} onSelect={this.handleSelect}>
-          <NavItem eventKey="1">
+          <NavItem eventKey="1" href="\list">
             List
             </NavItem>
-          <NavItem eventKey="2">
+          <NavItem eventKey="2" href="\map">
             Map
             </NavItem>
         </Nav>

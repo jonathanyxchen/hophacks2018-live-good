@@ -13,7 +13,11 @@ import NotFound from './components/App/NotFound';
 
 import Home from './components/Home/Home';
 
-import HelloWorld from './components/HelloWorld/HelloWorld';
+//import HelloWorld from './components/HelloWorld/HelloWorld';
+
+import ListView from './components/List/List'
+
+import MapView from './components/Map/Map'
 
 import './styles/styles.scss';
 
@@ -22,7 +26,8 @@ render((
     <App>
       <Switch>
         <Route exact path="/" component={Home}/>
-        <Route path="/helloworld" component={HelloWorld}/>
+        <Route path="/list" component={ListView}/>
+        <Route path="/map" component={MapView}/>
         <Route component={NotFound}/>
       </Switch>
     </App>

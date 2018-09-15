@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, Nav, NavItem } from 'react-bootstrap';
+import { Navbar, Nav, NavItem, FormGroup, FormControl, Button } from 'react-bootstrap';
 
 class Header extends React.Component {
   constructor(props) {
@@ -24,8 +24,13 @@ class Header extends React.Component {
           </Navbar.Header>
 
           <Navbar.Collapse>
+            <Navbar.Form pullRight>
+              <FormGroup>
+                <FormControl type="text" placeholder="Search" />
+              </FormGroup>
+            </Navbar.Form>
             <Nav>
-              <NavItem>
+              <NavItem href="/">
                 Link
             </NavItem>
             </Nav>
