@@ -14,8 +14,7 @@ class Header extends React.Component {
 
   render() {
     return (
-      <header>
-        <Navbar inverse collapseOnSelect staticTop>
+        <Navbar inverse collapseOnSelect fixedTop>
           <Navbar.Header>
             <Navbar.Brand>
               <a href="/">HopHacks2018 App</a>
@@ -36,7 +35,6 @@ class Header extends React.Component {
             </Nav>
           </Navbar.Collapse>
         </Navbar>
-      </header>
     );
   }
 }
