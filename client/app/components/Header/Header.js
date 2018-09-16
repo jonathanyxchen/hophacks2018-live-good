@@ -17,7 +17,7 @@ class Header extends React.Component {
         <Navbar inverse collapseOnSelect fixedTop>
           <Navbar.Header>
             <Navbar.Brand>
-              <a href="/">HopHacks2018 App</a>
+              <a href="/">Live Good</a>
             </Navbar.Brand>
             <Navbar.Toggle />
           </Navbar.Header>
@@ -28,11 +28,11 @@ class Header extends React.Component {
                 <FormControl type="text" placeholder="Search" />
               </FormGroup>
             </Navbar.Form>
-            <Nav>
+            {/* <Nav>
               <NavItem href="/">
                 Link
             </NavItem>
-            </Nav>
+            </Nav> */}
           </Navbar.Collapse>
         </Navbar>
     );

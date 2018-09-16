@@ -26,9 +26,9 @@ class Footer extends React.Component {
           <NavItem eventKey="2" href="\map">
             Map
           </NavItem>
-          <NavItem eventKey="3" href="\data">
+          {/* <NavItem eventKey="3" href="\data">
             Data
-          </NavItem>
+          </NavItem> */}
         </Nav>
       </Navbar>
     );

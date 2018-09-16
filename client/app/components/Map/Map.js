@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-//import MapComponent from 'react-cartographer/lib/components/Map';
-import ReactMapGL from 'react-map-gl';
+import ReactMapGL, { Marker } from 'react-map-gl';
+import { Badge } from 'react-bootstrap';
 
 class MapView extends React.Component {
   constructor(props) {
@@ -9,27 +9,41 @@ class MapView extends React.Component {
     this.state = {
       viewport: {
         width: 400,
-        height: 400,
-        latitude: 39.330433,
-        longitude: -76.615729,
-        zoom: 15
-      }
+        height: 650,
+        latitude: 39.3284207,
+        longitude: -76.619335,
+        zoom: 13.5
+      },
+      properties: []
     };
-
 
   }
 
-  componentDidMount() {
 
+  componentDidMount() {
+    fetch('/api/counters')
+      .then(res => res.json())
+      .then(json => {
+        this.setState({
+          properties: json
+        });
+      });
   }
 
   render() {
     return (
       <div>
-      <ReactMapGL 
-        {...this.state.viewport}
-        onViewportChange={(viewport) => this.setState({viewport})}
-      />
+        <ReactMapGL
+          {...this.state.viewport}
+          onViewportChange={(viewport) => this.setState({ viewport })}
+        > {
+            this.state.properties.map(property => 
+              <Marker latitude={property.latitude} longitude={property.longitude} >
+                <Badge>{property.name}</Badge>
+              </Marker>
+            )
+          }
+        </ReactMapGL>
       </div>
     )
   }

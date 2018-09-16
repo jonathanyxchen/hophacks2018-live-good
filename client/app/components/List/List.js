@@ -6,22 +6,38 @@ class ListView extends React.Component {
     super(props);
 
     this.state = {
-
+      properties: []
     };
 
 
   }
 
   componentDidMount() {
-
+    fetch('/api/counters')
+      .then(res => res.json())
+      .then(json => {
+        this.setState({
+          properties: json
+        });
+      });
   }
 
   render() {
+
     return (
       <div>
         <ListGroup>
-          <ListGroupItem href="#link1">
-            <span>Academy on Charles</span>
+          {
+            this.state.properties.map(property =>
+              <ListGroupItem href="#link1">
+                <div>Name: {property.name}</div>
+                <div>Address: {property.address}</div>
+                <div>Price: {property.price}</div>
+                <div>Minutes to Brody: {property.distance}</div>
+              </ListGroupItem>)
+          }
+          {/* <ListGroupItem href="#link1">
+            <span>{properties}</span>
             <span>1000m </span>
             <span>3700 N. Charles Street, 21218</span>
           </ListGroupItem>
@@ -39,7 +55,7 @@ class ListView extends React.Component {
             <span>ICON</span>
             <span>3400 N. Charles Street, 21218</span>
             <span>1800m</span>
-          </ListGroupItem>
+          </ListGroupItem> */}
         </ListGroup>
       </div>
     )

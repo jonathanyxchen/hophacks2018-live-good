@@ -2,34 +2,26 @@ const mongoose = require('mongoose');
 
 const PropertySchema = new mongoose.Schema({
     name: {
-        type: 'String',
-        required: true
+        type: String,
     },
     address: {
-        type: 'String',
-        required: true
+        type: String,
     },
     price: {
-        type: 'Number',
-        required: true
+        type: Number,
     },
     distance: {
-        type: 'Number',
-        required: true
+        type: Number,
     },
-    crime: { //TODO:
-        type: 'Number',
-        required: true
-    },
+    // crime: { //TODO:
+    //     type: 'Number',
+    //     required: true
+    // },
     longitude: {
-        type: 'Number',
-        default: 39.2904,
-        required: false
+        type: Number,
     },
     latitude: {
-        type: 'Number',
-        default: -76.6122,
-        required: false
+        type: Number,
     }
 })
 

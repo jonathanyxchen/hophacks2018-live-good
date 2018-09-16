@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Jumbotron, Button } from 'react-bootstrap'
 import 'whatwg-fetch';
 
 class Home extends Component {
@@ -85,22 +86,31 @@ class Home extends Component {
 
   render() {
     return (
-      <>
-        <p>Counters:</p>
+      <Jumbotron>
+        <h1> Let us find you the best off-campus apartment!</h1>
+        <p>
+          This app will give you the information about most off-campus apartments. We will rate each one regarding to its price, distance to JHU, and especially the safety index. You will have a better mind about where to live after your sophomore year from our data and information :)
+        </p>
+        <p>
+          <Button bsStyle="primary" href="/list">Learn more</Button>
+        </p>
+      </Jumbotron>
+      // <>
+      //   <p>Counters:</p>
 
-        <ul>
-          { this.state.counters.map((counter, i) => (
-            <li key={i}>
-              <span>{counter.count} </span>
-              <button onClick={() => this.incrementCounter(i)}>+</button>
-              <button onClick={() => this.decrementCounter(i)}>-</button>
-              <button onClick={() => this.deleteCounter(i)}>x</button>
-            </li>
-          )) }
-        </ul>
+      //   <ul>
+      //     { this.state.counters.map((counter, i) => (
+      //       <li key={i}>
+      //         <span>{counter.count} </span>
+      //         <button onClick={() => this.incrementCounter(i)}>+</button>
+      //         <button onClick={() => this.decrementCounter(i)}>-</button>
+      //         <button onClick={() => this.deleteCounter(i)}>x</button>
+      //       </li>
+      //     )) }
+      //   </ul>
 
-        <button onClick={this.newCounter}>New counter</button>
-      </>
+      //   <button onClick={this.newCounter}>New counter</button>
+      // </>
     );
   }
 }
